@@ -147,7 +147,7 @@ export default {
         paste_data_images: true,
         images_upload_handler: function (blobInfo, succFun, failFun) {
           var xhr, formData;
-          var file = blobInfo.blob(); //转化为易于理解的file对象
+          var file = blobInfo.blob(); 
           xhr = new XMLHttpRequest();
           xhr.withCredentials = false;
           xhr.open("POST", "http://123.57.174.153:9529/markdown/pictureUpload");
@@ -163,7 +163,7 @@ export default {
             succFun(json.data.url);
           };
           formData = new FormData();
-          formData.append("file", file, file.name); //此处与源文档不一样
+          formData.append("file", file, file.name);
           xhr.send(formData);
         },
         quickbars_selection_toolbar:
